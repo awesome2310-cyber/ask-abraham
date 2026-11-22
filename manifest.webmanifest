@@ -1,0 +1,16 @@
+{
+  "name": "Ask Abraham",
+  "short_name": "Ask Abraham",
+  "description": "Ask a question and hear it in Abraham’s own words, drawn from Abraham-Hicks transcripts with a link to the exact moment.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#FFF7ED",
+  "theme_color": "#C2410C",
+  "icons": [
+    {"src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any"},
+    {"src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any"},
+    {"src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "maskable"},
+    {"src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable"}
+  ]
+}
