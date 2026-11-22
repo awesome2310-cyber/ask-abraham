@@ -7,23 +7,31 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://cdn.jsdelivr.net">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Nunito+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://huggingface.co">
+<link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #f3eadf;
-    --bg-deep: #e9dccb;
-    --paper: #fffaf3;
-    --ink: #2b2218;
-    --ink-soft: #5c4d3c;
-    --muted: #8a7662;
-    --gold: #b07a32;
-    --gold-deep: #8a5a22;
-    --gold-soft: #ead6b3;
-    --line: #e4d3be;
-    --chip: #f7f0e6;
-    --shadow: 0 10px 30px rgba(62, 42, 22, 0.08);
-    --serif: "Cormorant Garamond", "Palatino Linotype", Palatino, "Iowan Old Style", Georgia, serif;
-    --sans: "Nunito Sans", "Segoe UI", "Avenir Next", "Helvetica Neue", system-ui, sans-serif;
+    --peach: #FCA47C;
+    --cyan: #23CED9;
+    --sand: #F9D779;
+    --sage: #A1CCA6;
+    --teal: #097C87;
+    --teal-deep: #076B74;
+    --bg: #FBF6EE;
+    --bg-deep: #F3EADF;
+    --paper: #FFFCF7;
+    --ink: #12363A;
+    --ink-soft: #2A555A;
+    --muted: #4A6E72;
+    --gold: var(--cyan);
+    --gold-deep: var(--teal);
+    --gold-soft: #B7D4BB;
+    --line: #D5E6E3;
+    --chip: #F8EFCC;
+    --shadow: 0 10px 30px rgba(9, 124, 135, 0.09);
+    --font: "Figtree", "Segoe UI", "Helvetica Neue", system-ui, sans-serif;
+    --serif: var(--font);
+    --sans: var(--font);
   }
   * { box-sizing: border-box; }
   html, body { margin: 0; padding: 0; }
@@ -31,8 +39,10 @@
     font-family: var(--sans);
     color: var(--ink);
     background:
-      radial-gradient(1200px 520px at 50% -80px, rgba(201, 154, 74, 0.18), transparent 60%),
-      radial-gradient(800px 400px at 100% 100%, rgba(176, 122, 50, 0.07), transparent 50%),
+      linear-gradient(90deg, #097C87 0%, #23CED9 45%, #FCA47C 75%, #F9D779 100%) 0 0 / 100% 4px no-repeat,
+      radial-gradient(1200px 520px at 50% -80px, rgba(35, 206, 217, 0.16), transparent 60%),
+      radial-gradient(800px 400px at 100% 100%, rgba(252, 164, 124, 0.14), transparent 50%),
+      radial-gradient(600px 300px at 0% 80%, rgba(161, 204, 166, 0.14), transparent 50%),
       var(--bg);
     min-height: 100vh;
   }
@@ -48,46 +58,46 @@
     font-weight: 700;
     letter-spacing: 0.22em;
     text-transform: uppercase;
-    color: var(--gold-deep);
+    color: var(--teal);
     margin: 0 0 14px;
   }
   h1 {
-    font-family: var(--serif);
-    font-weight: 600;
+    font-family: var(--sans);
+    font-weight: 700;
     font-size: clamp(48px, 8vw, 72px);
     line-height: 0.95;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.03em;
     margin: 0 0 16px;
-    color: var(--ink);
+    color: var(--teal);
   }
   .ornament {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 12px;
-    color: var(--gold);
+    color: var(--cyan);
     margin: 0 0 18px;
   }
   .ornament span.rule {
     display: block;
     width: 52px;
     height: 1px;
-    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    background: linear-gradient(90deg, transparent, var(--cyan), transparent);
   }
   .ornament .diamond {
     width: 7px;
     height: 7px;
-    background: var(--gold);
+    background: var(--peach);
     transform: rotate(45deg);
   }
   .lede {
-    font-family: var(--serif);
-    font-style: italic;
-    font-size: 22px;
-    line-height: 1.35;
+    font-family: var(--sans);
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.4;
     color: var(--ink-soft);
     margin: 0 auto;
-    max-width: 28em;
+    max-width: 32em;
   }
   .ask-box {
     background: var(--paper);
@@ -113,12 +123,12 @@
     max-height: 140px;
     padding: 14px 4px;
   }
-  #question::placeholder { color: #b09a82; }
+  #question::placeholder { color: #8AA3A6; }
   #askBtn {
     appearance: none;
     border: 0;
-    background: linear-gradient(180deg, #9a6428, #7a4c1c);
-    color: #fff8ee;
+    background: linear-gradient(180deg, #0B8A96, #097C87);
+    color: #fff;
     font-family: var(--sans);
     font-weight: 700;
     font-size: 15px;
@@ -127,9 +137,9 @@
     border-radius: 12px;
     cursor: pointer;
     white-space: nowrap;
-    box-shadow: 0 1px 0 rgba(255,255,255,0.25) inset, 0 6px 16px rgba(122, 76, 28, 0.25);
+    box-shadow: 0 1px 0 rgba(255,255,255,0.22) inset, 0 6px 16px rgba(9, 124, 135, 0.28);
   }
-  #askBtn:hover { background: linear-gradient(180deg, #a86e2d, #6e4318); }
+  #askBtn:hover { background: linear-gradient(180deg, #097C87, #076B74); }
   #askBtn:active { transform: translateY(1px); }
   .examples {
     display: grid;
@@ -153,8 +163,8 @@
   }
   .chip:hover, .chip.active {
     background: #fff;
-    border-color: var(--gold-soft);
-    color: var(--gold-deep);
+    border-color: var(--cyan);
+    color: var(--teal);
   }
   #status {
     text-align: center;
@@ -172,11 +182,12 @@
   }
   #results { margin-top: 10px; }
   .section-title {
-    font-family: var(--serif);
+    font-family: var(--sans);
     font-size: 28px;
-    font-weight: 600;
+    font-weight: 700;
+    letter-spacing: -0.02em;
     margin: 36px 0 14px;
-    color: var(--ink);
+    color: var(--teal);
   }
   .answer {
     position: relative;
@@ -193,13 +204,14 @@
     top: 18px;
     bottom: 18px;
     width: 3px;
-    background: var(--gold);
+    background: var(--cyan);
     border-radius: 0 2px 2px 0;
   }
   .answer-block { margin: 20px 0; }
   .answer-lead {
-    font-family: var(--serif);
+    font-family: var(--sans);
     font-size: 20px;
+    font-weight: 600;
     color: var(--ink-soft);
     margin: 0 0 8px;
   }
@@ -214,14 +226,14 @@
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    color: var(--gold-deep);
+    color: var(--teal);
     font-weight: 700;
     font-size: 14px;
     text-decoration: none;
     border-bottom: 1px solid transparent;
     cursor: pointer;
   }
-  .watch:hover { border-bottom-color: var(--gold); }
+  .watch:hover { border-bottom-color: var(--cyan); }
   .watch-urls {
     margin-top: 6px;
     display: flex;
@@ -236,7 +248,7 @@
     word-break: break-all;
     line-height: 1.4;
   }
-  .watch-url:hover { color: var(--gold-deep); text-decoration: underline; }
+  .watch-url:hover { color: var(--teal); text-decoration: underline; }
   .empty {
     text-align: center;
     background: var(--paper);
@@ -262,8 +274,8 @@
     transition: border-color .15s, box-shadow .15s;
   }
   .card:hover {
-    border-color: var(--gold-soft);
-    box-shadow: 0 12px 32px rgba(62, 42, 22, 0.12);
+    border-color: var(--cyan);
+    box-shadow: 0 12px 32px rgba(9, 124, 135, 0.14);
   }
   .thumb-link { display: block; border-radius: 10px; overflow: hidden; line-height: 0; }
   .thumb {
@@ -271,7 +283,7 @@
     height: 79px;
     object-fit: cover;
     border-radius: 10px;
-    background: #d9cbb8;
+    background: #A1CCA6;
     display: block;
   }
   .card-body { min-width: 0; padding: 2px 6px 2px 0; }
@@ -294,11 +306,11 @@
     margin: 0 0 10px;
   }
   .card-quote .answer-quote { font-size: 14.5px; line-height: 1.6; color: var(--ink-soft); margin: 0 0 8px; }
-  .answer-quote .key { background: linear-gradient(transparent 58%, #f3dfb3 58%); font-weight: 600; }
+  .answer-quote .key { background: linear-gradient(transparent 58%, #FCA47C88 58%); font-weight: 600; }
   .card-quote .key { font-weight: 600; color: var(--ink); background: none; }
   .gap { color: var(--ink-soft); padding: 0 2px; }
-  .asked { color: #8a8a8a; font-size: 13.5px; line-height: 1.45; margin: 0 0 10px; font-style: italic; }
-  .asked-label { display: inline-block; font-style: normal; font-size: 11px; letter-spacing: .04em; text-transform: uppercase; color: #9a9a9a; border: 1px solid #ddd; border-radius: 6px; padding: 0 6px; margin-right: 6px; }
+  .asked { color: #5C7578; font-size: 13.5px; line-height: 1.45; margin: 0 0 10px; font-style: italic; }
+  .asked-label { display: inline-block; font-style: normal; font-size: 11px; letter-spacing: .04em; text-transform: uppercase; color: #5C7578; border: 1px solid #D5E6E3; border-radius: 6px; padding: 0 6px; margin-right: 6px; }
   .card-body .asked { font-size: 12.5px; margin: 4px 0 6px; }
   .corrected { color: var(--ink-soft); font-size: 13px; margin: 0 0 8px; }
   .player { position: relative; aspect-ratio: 16/9; max-width: 560px; background: #000; border-radius: 10px; overflow: hidden; margin: 12px 0 6px; cursor: pointer; }
@@ -308,16 +320,16 @@
   .player iframe { width: 100%; height: 100%; border: 0; display: block; }
   .yt-link { font-size: 13px; color: var(--ink-soft); }
   #hitList .answer { margin-bottom: 16px; }
-  #moreBtn { display: block; margin: 18px auto 8px; padding: 10px 26px; border-radius: 999px; border: 1px solid var(--gold-soft); background: #fffaf2; font-size: 15px; cursor: pointer; }
+  #moreBtn { display: block; margin: 18px auto 8px; padding: 10px 26px; border-radius: 999px; border: 1px solid var(--gold-soft); background: #EAF5EB; color: var(--teal); font-family: var(--sans); font-weight: 700; font-size: 15px; cursor: pointer; }
   #loadbar { max-width: 420px; margin: 10px auto 0; text-align: center; color: var(--ink-soft); font-size: 12.5px; }
-  #loadbar .bar { height: 6px; background: #eadfcc; border-radius: 3px; overflow: hidden; margin-bottom: 4px; }
-  #loadbar .bar span { display: block; height: 100%; width: 3%; background: #b8893b; transition: width .25s; }
-  .spin { display: inline-block; width: 12px; height: 12px; border: 2px solid #d9c7a6; border-top-color: #8a5a1c; border-radius: 50%; animation: spin .8s linear infinite; vertical-align: -1px; margin-right: 4px; }
+  #loadbar .bar, .sum-load .bar { height: 6px; background: #D5E6E3; border-radius: 3px; overflow: hidden; margin-bottom: 4px; }
+  #loadbar .bar span, .sum-load .bar span { display: block; height: 100%; width: 3%; background: var(--cyan); transition: width .25s; }
+  .spin { display: inline-block; width: 12px; height: 12px; border: 2px solid #B7D4BB; border-top-color: var(--teal); border-radius: 50%; animation: spin .8s linear infinite; vertical-align: -1px; margin-right: 4px; }
   @keyframes spin { to { transform: rotate(360deg); } }
-  .weak { color: var(--ink-soft); font-size: 14px; background: #fbf3e4; border: 1px dashed var(--gold-soft); border-radius: 10px; padding: 10px 14px; margin: 0 0 12px; }
+  .weak { color: var(--ink-soft); font-size: 14px; background: #FDF3C8; border: 1px dashed #E8CF6A; border-radius: 10px; padding: 10px 14px; margin: 0 0 12px; }
   .answer-block.main .answer-quote { font-size: 17.5px; line-height: 1.7; }
   mark {
-    background: #f3dfb3;
+    background: #F9D779;
     color: inherit;
     padding: 0 0.12em;
     border-radius: 2px;
@@ -339,34 +351,40 @@
     font-size: 14px; letter-spacing: .04em; padding: 8px 18px; border-radius: 999px;
     cursor: pointer;
   }
-  .tab[aria-selected="true"] { background: #fff; border-color: var(--gold-soft); color: var(--gold-deep); }
+  .tab[aria-selected="true"] { background: #fff; border-color: var(--cyan); color: var(--teal); }
   .topic-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
   .topic-card {
     appearance: none; text-align: left; border: 1px solid var(--line); background: var(--paper);
     border-radius: 14px; padding: 14px 16px; cursor: pointer; box-shadow: var(--shadow);
     font-family: var(--sans); color: var(--ink);
   }
-  .topic-card:hover { border-color: var(--gold-soft); }
-  .topic-card .tname { display: block; font-family: var(--serif); font-size: 22px; font-weight: 600; line-height: 1.15; margin: 0 0 4px; }
+  .topic-card:nth-child(3n+1) { background: #FDF6D4; border-color: #E8CF6A; }
+  .topic-card:nth-child(3n+2) { background: #EAF5EB; border-color: #B7D4BB; }
+  .topic-card:nth-child(3n) { background: #FFE8D8; border-color: #F0B89A; }
+  .topic-card:hover { border-color: var(--teal); }
+  .topic-card .tname { display: block; font-family: var(--sans); font-size: 22px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.15; margin: 0 0 4px; color: var(--teal); }
   .topic-card .tcount { font-size: 12.5px; color: var(--muted); }
-  .topic-back { appearance: none; border: 0; background: none; color: var(--gold-deep); font-weight: 700; font-size: 14px; cursor: pointer; padding: 0; margin: 0 0 10px; }
+  .topic-back { appearance: none; border: 0; background: none; color: var(--teal); font-weight: 700; font-size: 14px; cursor: pointer; padding: 0; margin: 0 0 10px; }
   .topic-summary { background: var(--paper); border: 1px solid var(--line); border-radius: 14px; padding: 16px 18px; margin: 0 0 20px; box-shadow: var(--shadow); }
   .topic-summary p { margin: 0 0 10px; font-size: 16px; line-height: 1.6; color: var(--ink); }
   .topic-summary .cites { margin: 0; font-size: 12.5px; color: var(--muted); line-height: 1.5; }
-  .topic-summary .cites a { color: var(--gold-deep); text-decoration: none; }
+  .topic-summary .cites a { color: var(--teal); text-decoration: none; }
   .topic-actions { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 16px; }
-  .text-btn { appearance: none; border: 1px solid var(--gold-soft); background: #fffaf2; color: var(--gold-deep); font-size: 13.5px; font-weight: 700; padding: 7px 14px; border-radius: 999px; cursor: pointer; }
+  .text-btn { appearance: none; border: 1px solid var(--gold-soft); background: #EAF5EB; color: var(--teal); font-family: var(--sans); font-size: 13.5px; font-weight: 700; padding: 7px 14px; border-radius: 999px; cursor: pointer; }
   #topicFilter { margin: 12px auto 0; max-width: 720px; }
-  #topicFilter .filter-chip { display: inline-flex; align-items: center; gap: 8px; background: #fff; border: 1px solid var(--gold-soft); color: var(--gold-deep); border-radius: 999px; padding: 6px 12px; font-size: 13.5px; font-weight: 600; }
+  #topicFilter .filter-chip { display: inline-flex; align-items: center; gap: 8px; background: #FDF6D4; border: 1px solid #E8CF6A; color: var(--ink); border-radius: 999px; padding: 6px 12px; font-size: 13.5px; font-weight: 600; }
   #topicFilter button { appearance: none; border: 0; background: none; color: var(--muted); cursor: pointer; font-size: 16px; line-height: 1; padding: 0 0 0 2px; }
   .filter-row { margin: 10px auto 0; max-width: 720px; text-align: center; }
   .filter-row .mini { appearance: none; border: 1px solid var(--line); background: var(--chip); color: var(--ink-soft); font-size: 12px; padding: 5px 10px; border-radius: 999px; cursor: pointer; margin: 3px; }
-  .filter-row .mini.on, .filter-row .mini:hover { border-color: var(--gold-soft); background: #fff; color: var(--gold-deep); }
-  #sumBox { background: var(--paper); border: 1px solid var(--line); border-radius: 14px; padding: 14px 16px; margin: 0 0 16px; }
-  #sumBox h3 { font-family: var(--serif); font-size: 22px; margin: 0 0 8px; }
+  .filter-row .mini.on, .filter-row .mini:hover { border-color: var(--cyan); background: #fff; color: var(--teal); }
+  #sumBox { background: var(--paper); border: 1px solid var(--line); border-left: 4px solid var(--peach); border-radius: 14px; padding: 14px 16px; margin: 0 0 16px; }
+  #sumBox h3 { font-family: var(--sans); font-size: 20px; font-weight: 700; letter-spacing: -0.02em; margin: 0 0 8px; color: var(--teal); }
   #sumBox p { margin: 0 0 8px; font-size: 15.5px; line-height: 1.6; }
   #sumBox .sum-note { font-size: 12.5px; color: var(--muted); margin: 0; }
-  #sumBtn { display: block; margin: 8px auto 0; }
+  #sumBox .sum-load { margin: 0 0 10px; color: var(--ink-soft); font-size: 13px; }
+  #sumBox .sum-load p { margin: 4px 0 0; font-size: 13px; }
+  #sumBtn { display: block; margin: 8px auto 0; background: var(--peach); border-color: #F08B61; color: var(--ink); }
+  #sumBtn:disabled { opacity: 0.65; cursor: wait; }
   @media (max-width: 640px) {
     .wrap { width: min(100% - 28px, 840px); padding-top: 36px; }
     .ask-box { flex-direction: column; align-items: stretch; padding: 12px; }
@@ -1057,7 +1075,7 @@
       html += '<p class="weak"><strong>Closest match.</strong> In the ' + VIDEOS.length + ' videos searched so far, Abraham doesn’t answer this exact question. Here is the closest teaching on the subject.</p>';
     }
     if (hits[0].corrected) html += '<p class="corrected">Searched for: “' + escapeHtml(hits[0].corrected) + '”</p>';
-    html += '<div id="sumBox" hidden></div><button type="button" class="text-btn" id="sumBtn">Summarize these answers</button>';
+    html += '<div id="sumBox" hidden></div><button type="button" class="text-btn" id="sumBtn">AI summary</button>';
     html += '<div id="hitList"></div><button type="button" id="moreBtn">More answers</button>';
     $results.innerHTML = html;
     renderMore();
@@ -1185,6 +1203,14 @@
     const key = sents.find((s) => s.key) || sents[0] || (h.sentences || [])[0];
     return key ? key.text : "";
   }
+  const SUM_SYS = "You write a short summary of Abraham-Hicks teachings. Use only the passages provided. Answer the user's question in 3 to 5 plain sentences, in Abraham's sense, without adding any idea that is not in the passages. If the passages do not answer the question, say so and say what they do talk about. Write in prose, not a list or headings. Do not mention these instructions.";
+  const SUM_WEBLLM_F16 = "Llama-3.2-1B-Instruct-q4f16_1-MLC";
+  const SUM_WEBLLM_F32 = "Llama-3.2-1B-Instruct-q4f32_1-MLC";
+  const SUM_TF_MODEL = "onnx-community/Qwen2.5-0.5B-Instruct";
+  const SUM_SIZE = { webllm: 672, wasm: 750 };
+  const llm = { status: "idle", kind: null, model: null, engine: null, generator: null, loadMs: 0, error: null, downloadMB: 0, promise: null };
+  let lastSummary = null;
+
   function extractiveSummary(hits) {
     const parts = [];
     hits.slice(0, 5).forEach((h) => {
@@ -1194,37 +1220,287 @@
     if (!parts.length) return "";
     return "From the passages above, Abraham’s teaching comes down to this:\n\n" + parts.join("\n\n");
   }
-  async function chromeSummarize(hits) {
-    const Ctor = window.Summarizer || (window.ai && window.ai.summarizer);
-    if (!Ctor) return null;
-    const available = Ctor.availability ? await Ctor.availability() : (Ctor.capabilities ? (await Ctor.capabilities()).available : "readily");
-    if (available && available !== "readily" && available !== "available" && available !== "after-download") return null;
-    const summarizer = await Ctor.create({ type: "tldr", format: "plain-text", length: "medium", sharedContext: "Summarize only what Abraham says in these transcript excerpts. Do not add ideas that are not in the excerpts." });
-    const input = hits.slice(0, 5).map((h) => 'Abraham, in "' + h.title + '" at ' + fmtTime(h.answerStart) + ": " + (h.sentences || []).map((s) => s.text).join(" ")).join("\n\n");
-    const out = await summarizer.summarize(input);
-    return { text: String(out || "").trim(), source: "chrome" };
+  function passagePrompt(hits, query) {
+    const parts = hits.slice(0, 5).map((h, i) => {
+      let text = (h.sentences || []).map((s) => s.text).join(" ").replace(/\s+/g, " ").trim();
+      const words = text.split(" ");
+      if (words.length > 90) text = words.slice(0, 90).join(" ") + "…";
+      return "[" + (i + 1) + '] From “' + h.title + "” at " + fmtTime(h.answerStart) + ":\n" + text;
+    });
+    return {
+      system: SUM_SYS,
+      user: "User's question: " + query + "\n\nAbraham passages:\n" + parts.join("\n\n") + "\n\nIn 3 to 5 sentences of prose, restate only what Abraham says in these passages about the question. Stay close to his meaning. Do not add medical, historical, or self-help ideas that are not written above."
+    };
   }
+  function isSoftwareAdapter(adapter, info) {
+    if (!adapter) return true;
+    if (info && info.isFallbackAdapter) return true;
+    const blob = [info && info.vendor, info && info.architecture, info && info.description, info && info.device, info && info.backend]
+      .filter(Boolean).join(" ").toLowerCase();
+    return /swiftshader|llvmpipe|softpipe|microsoft basic render|cpu adapter|software/.test(blob);
+  }
+  async function adapterInfoOf(adapter) {
+    if (!adapter) return {};
+    try {
+      if (adapter.info) return adapter.info;
+      if (adapter.requestAdapterInfo) return await adapter.requestAdapterInfo();
+    } catch (e) { /* older browsers */ }
+    return {};
+  }
+  async function gpuInfo() {
+    const out = { webgpu: false, shaderF16: false, software: false, vendor: "", description: "" };
+    if (!navigator.gpu) return out;
+    try {
+      const adapter = await navigator.gpu.requestAdapter();
+      if (!adapter) return out;
+      const info = await adapterInfoOf(adapter);
+      out.vendor = info.vendor || "";
+      out.description = info.description || info.device || info.architecture || "";
+      out.software = isSoftwareAdapter(adapter, info);
+      out.shaderF16 = !!(adapter.features && adapter.features.has("shader-f16"));
+      out.webgpu = !out.software;
+    } catch (e) { /* no gpu */ }
+    return out;
+  }
+  function withTimeout(promise, ms, label) {
+    let t;
+    const timeout = new Promise((_, rej) => { t = setTimeout(() => rej(new Error(label || "timeout")), ms); });
+    return Promise.race([promise, timeout]).finally(() => clearTimeout(t));
+  }
+  function renderSumProgress(box, label, pct, mbLoaded, mbTotal) {
+    if (!box) return;
+    const p = Math.max(0, Math.min(100, Math.round((pct || 0) * 100)));
+    let detail = label || "Loading the mini AI model…";
+    if (mbTotal) detail += " " + Math.round(mbLoaded || 0) + " / " + Math.round(mbTotal) + " MB (" + p + "%)";
+    else if (p) detail += " " + p + "%";
+    box.hidden = false;
+    box.innerHTML = '<h3>AI summary</h3><div class="sum-load"><div class="bar"><span style="width:' + p + '%"></span></div><p><span class="spin"></span>' + escapeHtml(detail) + "</p></div>";
+  }
+  function renderSumText(box, text, streaming) {
+    if (!box) return;
+    box.hidden = false;
+    const paras = escapeHtml(text || (streaming ? "…" : "")).split(/\n\n/).map((p) => "<p>" + p.replace(/\n/g, "<br>") + "</p>").join("");
+    const note = streaming
+      ? "Writing the summary…"
+      : "AI summary of Abraham's answers. May be imperfect";
+    box.innerHTML = "<h3>AI summary</h3>" + (paras || "<p>…</p>") + '<p class="sum-note">' + note + "</p>";
+  }
+  function renderExtractive(box, text, reason) {
+    if (!box) return;
+    box.hidden = false;
+    const paras = escapeHtml(text || "").split(/\n\n/).map((p) => "<p>" + p.replace(/\n/g, "<br>") + "</p>").join("");
+    const note = "This device couldn't run the mini AI in the browser, so here's a short reading stitched from Abraham's own sentences." + (reason ? " " + reason : "");
+    box.innerHTML = "<h3>A short reading of these answers</h3>" + paras + '<p class="sum-note">' + escapeHtml(note) + "</p>";
+  }
+
+  async function loadWebLLM(onProgress) {
+    const gpu = await gpuInfo();
+    if (!gpu.webgpu) throw new Error("no-webgpu");
+    const model = gpu.shaderF16 ? SUM_WEBLLM_F16 : SUM_WEBLLM_F32;
+    const t0 = performance.now();
+    const webllm = await import("https://cdn.jsdelivr.net/npm/@mlc-ai/web-llm@0.2.89/+esm");
+    const engine = await withTimeout(webllm.CreateMLCEngine(model, {
+      initProgressCallback: (r) => {
+        const frac = typeof r.progress === "number" ? (r.progress > 1 ? r.progress / 100 : r.progress) : 0;
+        const mb = SUM_SIZE.webllm;
+        if (onProgress) onProgress({ text: r.text || "Loading the mini AI model…", frac, loadedMB: frac * mb, totalMB: mb });
+      }
+    }), 180000, "webllm-load-timeout");
+    llm.status = "ready";
+    llm.kind = "webllm";
+    llm.model = model;
+    llm.engine = engine;
+    llm.loadMs = Math.round(performance.now() - t0);
+    llm.downloadMB = SUM_SIZE.webllm;
+    llm.error = null;
+    return llm;
+  }
+  async function loadTransformers(device, onProgress) {
+    const t0 = performance.now();
+    const tf = await import("https://cdn.jsdelivr.net/npm/@huggingface/transformers@4.3.2/+esm");
+    if (tf.env) {
+      tf.env.allowLocalModels = false;
+      if (tf.env.useBrowserCache !== undefined) tf.env.useBrowserCache = true;
+    }
+    const files = new Map();
+    const model = SUM_TF_MODEL;
+    const task = "text-generation";
+    const dtype = device === "webgpu" ? "q4f16" : "q4";
+    const totalHint = device === "webgpu" ? 461 : SUM_SIZE.wasm;
+    const generator = await withTimeout(tf.pipeline(task, model, {
+      device: device,
+      dtype: dtype,
+      progress_callback: (p) => {
+        if (p && p.file && (p.status === "progress" || p.status === "done" || p.status === "initiate")) {
+          const loaded = p.status === "done" ? (p.total || p.loaded || 0) : (p.loaded || 0);
+          const total = p.total || files.get(p.file)?.total || 0;
+          files.set(p.file, { loaded, total });
+        }
+        let loaded = 0, total = 0;
+        files.forEach((v) => { loaded += v.loaded; total += v.total; });
+        const frac = total ? loaded / total : 0;
+        const mbLoaded = loaded / 1048576;
+        const mbTotal = total ? total / 1048576 : totalHint;
+        if (onProgress) onProgress({ text: "Loading the mini AI model…", frac, loadedMB: mbLoaded, totalMB: mbTotal });
+      }
+    }), 420000, "transformers-load-timeout");
+    llm.status = "ready";
+    llm.kind = "transformers-" + device;
+    llm.task = task;
+    llm.model = model + " (" + dtype + ", " + device + ")";
+    llm.generator = generator;
+    llm.tf = tf;
+    llm.loadMs = Math.round(performance.now() - t0);
+    let bytes = 0;
+    files.forEach((v) => { bytes += v.total || v.loaded || 0; });
+    llm.downloadMB = bytes ? +(bytes / 1048576).toFixed(1) : totalHint;
+    llm.error = null;
+    return llm;
+  }
+  async function ensureLLM(onProgress) {
+    if (llm.status === "ready") return llm;
+    if (llm.promise) return llm.promise;
+    llm.status = "loading";
+    llm.promise = (async () => {
+      const gpu = await gpuInfo();
+      if (gpu.webgpu) {
+        try { return await loadWebLLM(onProgress); } catch (e) { console.warn("WebLLM failed, trying transformers.js", e); }
+        try { return await loadTransformers("webgpu", onProgress); } catch (e) { console.warn("transformers.js WebGPU failed, trying WASM", e); }
+      }
+      return await loadTransformers("wasm", onProgress);
+    })().catch((e) => {
+      llm.status = "failed";
+      llm.error = e && e.message ? e.message : String(e);
+      throw e;
+    }).finally(() => { llm.promise = null; });
+    return llm.promise;
+  }
+
+  function cleanSummary(text) {
+    let t = String(text || "").replace(/<\|im_end\|>/g, "").replace(/<\|endoftext\|>/g, "").replace(/<\|im_start\|>/g, "").trim();
+    const parts = t.split(/(?<=[.!?])\s+/).filter(Boolean);
+    const out = [];
+    for (const part of parts) {
+      const norm = part.trim().toLowerCase();
+      if (out.length && norm === out[out.length - 1].trim().toLowerCase()) continue;
+      const prev = out.join(" ").toLowerCase();
+      if (norm.length > 20 && prev.includes(norm)) continue;
+      out.push(part.trim());
+    }
+    t = out.join(" ").replace(/[ \t]+/g, " ").replace(/\n{3,}/g, "\n\n").trim();
+    return t;
+  }
+  function isFaithful(summary, hits) {
+    const srcRaw = (hits || []).map((h) => (h.sentences || []).map((s) => s.text).join(" ")).join(" ");
+    const src = srcRaw.toLowerCase();
+    const names = String(summary || "").match(/\b(?:Dr|Mr|Mrs|Ms|Prof)\.?\s+[A-Z][a-z]+|\b[A-Z][a-z]+(?:\s+[A-Z][a-z]+)+/g) || [];
+    for (const n of names) {
+      if (!src.includes(n.toLowerCase())) return false;
+    }
+    const banned = ["medication","medications","medicine","doctor","doctors","surgery","surgeon","exercise","inflammation","immune","herbal","herbs","ayurvedic","antihistamine","egypt","greece","rome"];
+    for (const w of banned) {
+      if (new RegExp("\\b" + w + "\\b").test(String(summary || "").toLowerCase()) && !src.includes(w)) return false;
+    }
+    const words = String(summary || "").toLowerCase().match(/[a-z']{5,}/g) || [];
+    const stop = /^(about|after|again|being|because|could|doing|every|from|their|there|these|those|which|while|would|should|shall|thing|things|through|where|other|others|still|just|really|something|someone|instead|without|within|rather|using|having|going|comes|come|make|makes|made|more|most|such|than|that|this|then|them|they|what|when|with|your|yours|yourself|individuals|individual|ultimately|approach|allows|allow)$/;
+    const content = words.filter((w) => !stop.test(w) && w.length >= 5);
+    if (content.length < 12) return false;
+    const hit = content.filter((w) => src.includes(w)).length;
+    return hit / content.length >= 0.42;
+  }
+  async function generateWithWebLLM(prompt, onToken) {
+
+
+    let text = "";
+    const stream = await withTimeout(llm.engine.chat.completions.create({
+      messages: [
+        { role: "system", content: prompt.system },
+        { role: "user", content: prompt.user }
+      ],
+      temperature: 0.2,
+      max_tokens: 220,
+      stream: true
+    }), 180000, "webllm-generate-timeout");
+    for await (const chunk of stream) {
+      const piece = chunk && chunk.choices && chunk.choices[0] && chunk.choices[0].delta && chunk.choices[0].delta.content || "";
+      if (piece) { text += piece; if (onToken) onToken(text); }
+    }
+    return cleanSummary(text);
+  }
+  async function generateWithTransformers(prompt, onToken) {
+    const tf = llm.tf;
+    const generator = llm.generator;
+    const messages = [
+      { role: "system", content: prompt.system },
+      { role: "user", content: prompt.user }
+    ];
+    let input = messages;
+    try {
+      if (generator.tokenizer && generator.tokenizer.apply_chat_template) {
+        input = generator.tokenizer.apply_chat_template(messages, { tokenize: false, add_generation_prompt: true });
+      }
+    } catch (e) { input = messages; }
+    let text = "";
+    const streamer = new tf.TextStreamer(generator.tokenizer, {
+      skip_prompt: true,
+      skip_special_tokens: true,
+      callback_function: (t) => { text += t; if (onToken) onToken(cleanSummary(text)); }
+    });
+    const out = await withTimeout(generator(input, {
+      max_new_tokens: 180,
+      do_sample: false,
+      repetition_penalty: 1.2,
+      no_repeat_ngram_size: 6,
+      return_full_text: false,
+      streamer
+    }), 300000, "transformers-generate-timeout");
+    if (!text) {
+      const gen = out && out[0] && out[0].generated_text;
+      if (typeof gen === "string") text = gen;
+      else if (Array.isArray(gen) && gen.length) {
+        const last = gen[gen.length - 1];
+        text = (last && last.content) ? last.content : String(last || "");
+      }
+    }
+    return cleanSummary(text);
+  }
+
   async function summarizeShown() {
     if (!shown || !shown.hits || !shown.hits.length) return;
     const box = document.getElementById("sumBox");
     const btn = document.getElementById("sumBtn");
-    if (box) { box.hidden = false; box.innerHTML = '<p><span class="spin"></span> Writing a short summary of the passages on this page…</p>'; }
     if (btn) btn.disabled = true;
     const hits = shown.hits.slice(0, Math.max(shown.n, 1));
-    let result = null, err = null;
-    try { result = await chromeSummarize(hits); } catch (e) { err = e; console.warn("Chrome Summarizer failed", e); }
-    if (!result || !result.text) {
+    const query = shown.query || "";
+    const prompt = passagePrompt(hits, query);
+    let result;
+    try {
+      if (llm.status !== "ready") renderSumProgress(box, "Loading the mini AI model…", 0, 0, 0);
+      await ensureLLM((p) => renderSumProgress(box, p.text, p.frac, p.loadedMB, p.totalMB));
+      renderSumText(box, "", true);
+      const t1 = performance.now();
+      const onToken = (t) => renderSumText(box, t, true);
+      const text = llm.kind === "webllm"
+        ? await generateWithWebLLM(prompt, onToken)
+        : await generateWithTransformers(prompt, onToken);
+      const genMs = Math.round(performance.now() - t1);
+      if (!text) throw new Error("empty-summary");
+      const faithful = isFaithful(text, hits);
+      result = {
+        text, source: "ai", kind: llm.kind, model: llm.model,
+        loadMs: llm.loadMs, genMs, downloadMB: llm.downloadMB, faithful
+      };
+      renderSumText(box, text, false);
+    } catch (e) {
+      console.warn("AI summary failed", e);
+      const reason = (e && e.message === "no-webgpu")
+        ? ""
+        : "The model could not finish on this device.";
       const text = extractiveSummary(hits);
-      result = { text: text, source: "extractive" };
+      result = { text, source: "extractive", error: e && e.message ? e.message : String(e), kind: llm.kind, model: llm.model };
+      renderExtractive(box, text, reason);
     }
-    const note = result.source === "chrome"
-      ? "Written by this browser’s built-in summarizer, from the Abraham passages shown below. It is a short reading, not a new Abraham quote."
-      : "Stitched from Abraham’s own sentences in the passages below, with a link back to each talk. No separate AI model was loaded.";
-    if (box) {
-      const paras = escapeHtml(result.text).split(/\n\n/).map((p) => '<p>' + p.replace(/\n/g, "<br>") + '</p>').join("");
-      box.innerHTML = '<h3>A short reading of these answers</h3>' + paras + '<p class="sum-note">' + note + (err ? " (The on-device summarizer was not available.)" : "") + '</p>';
-      box.hidden = false;
-    }
+    lastSummary = result;
     if (btn) btn.disabled = false;
     return result;
   }
@@ -1259,10 +1535,11 @@
 
   window.AskAbraham = {
     get lastSearchMs() { return lastSearchMs; }, TIMING, search, run, tokenize, understand, spellFix, isWeak, UNITS, QUESTIONS, SHOW, watchUrl, shortUrl, openWatch, CORPUS, INDEX, TOPICS, UNIT_TOPICS,
-    openTopic, setActiveTopic, summarizeShown, extractiveSummary, setTab,
+    openTopic, setActiveTopic, summarizeShown, extractiveSummary, setTab, ensureLLM, gpuInfo,
     get activeTopic() { return activeTopic; },
     get lastJob() { return lastJob; },
-    get embedStatus() { return embedStatus; }, get hasEmbedder() { return !!extractor; }, get rerankStatus() { return rerankStatus; }
+    get embedStatus() { return embedStatus; }, get hasEmbedder() { return !!extractor; }, get rerankStatus() { return rerankStatus; },
+    get lastSummary() { return lastSummary; }, get llm() { return llm; }
   };
   loadEmbedder();
   const params = new URLSearchParams(location.search);
