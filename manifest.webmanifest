@@ -1,6 +1,6 @@
 {
-  "name": "Ask Abraham",
-  "short_name": "Ask Abraham",
+  "name": "Abraham Answers",
+  "short_name": "Abraham Answers",
   "description": "Ask a question and hear it in Abraham’s own words, drawn from Abraham-Hicks transcripts with a link to the exact moment.",
   "start_url": "./",
   "scope": "./",

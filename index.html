@@ -3,20 +3,21 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Ask Abraham</title>
+<title>Abraham Answers</title>
 <meta name="description" content="Ask a question and hear it in Abraham’s own words, drawn from Abraham-Hicks transcripts with a link to the exact moment.">
 <meta name="theme-color" content="#C2410C">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-title" content="Ask Abraham">
+<meta name="apple-mobile-web-app-title" content="Abraham Answers">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Ask Abraham">
+<meta property="og:title" content="Abraham Answers">
 <meta property="og:description" content="Ask a question and hear it in Abraham’s own words, drawn from Abraham-Hicks transcripts with a link to the exact moment.">
-<meta property="og:image" content="https://awesome2310-cyber.github.io/ask-abraham/og.png">
-<meta property="og:url" content="https://awesome2310-cyber.github.io/ask-abraham/">
+<meta property="og:image" content="https://abrahamanswers.com/og.png">
+<meta property="og:url" content="https://abrahamanswers.com/">
+<link rel="canonical" href="https://abrahamanswers.com/">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Ask Abraham">
+<meta name="twitter:title" content="Abraham Answers">
 <meta name="twitter:description" content="Ask a question and hear it in Abraham’s own words, drawn from Abraham-Hicks transcripts with a link to the exact moment.">
-<meta name="twitter:image" content="https://awesome2310-cyber.github.io/ask-abraham/og.png">
+<meta name="twitter:image" content="https://abrahamanswers.com/og.png">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -279,6 +280,33 @@
   html[data-v="b"] .btn-solid { border-radius: 14px; }
   .btn-solid:hover { transform: translateY(-2px); box-shadow: 0 14px 24px -8px rgba(194,65,12,.6); }
 
+
+  .about-contact .contact-line { margin: 0 0 18px; font-size: 16px; line-height: 1.55; color: var(--ink-soft); }
+  .about-contact .contact-line a { font-weight: 700; color: var(--primary-deep); text-decoration: none; word-break: break-word; }
+  .about-contact .contact-line a:hover { text-decoration: underline; }
+  .comment-form { display: grid; gap: 14px; }
+  .comment-form label { display: grid; gap: 6px; font-size: 13.5px; font-weight: 700; color: var(--ink-soft); }
+  .comment-form .hint { font-weight: 500; color: var(--muted); }
+  .comment-form input[type="text"],
+  .comment-form input[type="email"],
+  .comment-form textarea {
+    appearance: none; width: 100%; border: 1px solid var(--line); background: var(--cream);
+    border-radius: 16px; padding: 12px 14px; font-family: var(--font); font-size: 16px; color: var(--ink);
+    min-height: 48px;
+  }
+  .comment-form textarea { min-height: 140px; resize: vertical; line-height: 1.5; }
+  .comment-form input:focus, .comment-form textarea:focus {
+    outline: none; border-color: var(--peach); box-shadow: 0 0 0 4px rgba(253,186,116,.35); background: #fff;
+  }
+  .comment-form .honey { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+  .comment-form .form-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-top: 4px; }
+  .comment-form .form-status { margin: 0; font-size: 14.5px; line-height: 1.5; color: var(--ink-soft); }
+  .comment-form .form-status.ok { color: #166534; }
+  .comment-form .form-status.err { color: #9A3412; }
+  .comment-form .form-status a { font-weight: 700; }
+  .comment-form .btn-solid:disabled { opacity: .72; cursor: wait; transform: none; box-shadow: 0 10px 20px -8px rgba(194,65,12,.55); }
+
+
   footer.note { margin-top: 44px; padding-top: 18px; border-top: 1px solid var(--line); color: var(--muted); font-size: 13px; line-height: 1.6; text-align: center; }
   footer.note a { color: var(--primary-deep); font-weight: 600; }
   #toast { position: fixed; left: 50%; bottom: 28px; transform: translateX(-50%); background: var(--ink); color: #fff; padding: 12px 20px; border-radius: 999px; font-size: 14px; font-weight: 600; z-index: 60; box-shadow: var(--shadow-lg); animation: rise .25s var(--ease) both; }
@@ -346,13 +374,13 @@
 
   <header class="topbar">
     <div class="topbar-in">
-      <a class="brand" id="brand" href="./" aria-label="Ask Abraham, home">
+      <a class="brand" id="brand" href="./" aria-label="Abraham Answers, home">
         <svg class="logo-mark" aria-hidden="true"><use href="#heartleaf"/></svg>
-        <span class="brand-name">Ask Abraham</span>
+        <span class="brand-name">Abraham Answers</span>
       </a>
       <nav class="tabs" role="tablist" aria-label="Sections">
         <button type="button" class="tab" id="tabAsk" role="tab" aria-selected="true" aria-controls="askPane" tabindex="0">
-          <svg class="ti" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg><span>Ask</span></button>
+          <svg class="ti" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg><span>Answer</span></button>
         <button type="button" class="tab" id="tabTopics" role="tab" aria-selected="false" aria-controls="topicsPane" tabindex="-1">
           <svg class="ti" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m16.24 7.76-2.12 6.36-6.36 2.12 2.12-6.36z"/></svg><span>Explore</span></button>
         <button type="button" class="tab" id="tabAbout" role="tab" aria-selected="false" aria-controls="aboutPane" tabindex="-1">
@@ -366,13 +394,13 @@
       <div class="hero">
         <svg class="hero-mark" aria-hidden="true"><use href="#heartleaf"/></svg>
         <p class="eyebrow">The teachings of Abraham Hicks</p>
-        <h1 class="hero-title">What’s on your <em>mind?</em></h1>
+        <h1 class="hero-title">When You Ask, Source Answers</h1>
         <p class="lede">Ask in your own words and hear Abraham’s answer, with the video ready at the exact moment.</p>
       </div>
       <div class="ask-sticky">
         <div class="ask-box">
           <label for="question" class="visually-hidden">Your question for Abraham</label>
-          <textarea id="question" rows="1" placeholder="Ask Abraham anything…" autocomplete="off"></textarea>
+          <textarea id="question" rows="1" placeholder="Ask Abraham for Answers…" autocomplete="off"></textarea>
           <button type="button" id="askBtn" aria-label="Ask"><span class="lbl">Ask</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></button>
         </div>
         <div id="loadSlot"></div>
@@ -413,12 +441,12 @@
       <div class="about-hero">
         <svg class="hero-mark" aria-hidden="true"><use href="#heartleaf"/></svg>
         <h1>Helping the words of Abraham reach more people</h1>
-        <p class="about-lede">Ask Abraham is a small labor of love, made to share the teachings of Abraham Hicks with anyone who could use them.</p>
+        <p class="about-lede">Abraham Answers is a small labor of love, made to share the teachings of Abraham Hicks with anyone who could use them.</p>
       </div>
       <div class="about-card">
         <h2>Why we made this</h2>
         <p>There are thousands of hours of Abraham’s recordings out there, and when something is weighing on you, the right words can be hard to find.</p>
-        <p>So we built a simple way to ask in your own words and be taken straight to what Abraham said about it, in his own voice, at the exact moment. When you hit a problem, a worry, a health scare, a money knot, or a tough day with your child, we hope an answer is never more than a question away.</p>
+        <p>So we built a simple way to ask in your own words and be taken straight to what Abraham said about it, in her own voice, at the exact moment. When you hit a problem, a worry, a health scare, a money knot, or a tough day with your child, we hope an answer is never more than a question away.</p>
       </div>
       <div class="about-card about-goal">
         <h2>What we hope for</h2>
@@ -432,9 +460,29 @@
       <div class="about-note">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
         <div>
-          <p><strong>A fan-made, unofficial resource.</strong> Ask Abraham is not affiliated with or endorsed by Abraham Hicks or Esther Hicks. All teachings, recordings, and videos belong to Abraham Hicks / Esther Hicks. For the full body of work, visit <a href="https://www.abraham-hicks.com" target="_blank" rel="noopener noreferrer">abraham-hicks.com</a>.</p>
+          <p><strong>A fan-made, unofficial resource.</strong> Abraham Answers is not affiliated with or endorsed by Abraham Hicks or Esther Hicks. All teachings, recordings, and videos belong to Abraham Hicks / Esther Hicks. For the full body of work, visit <a href="https://www.abraham-hicks.com" target="_blank" rel="noopener noreferrer">abraham-hicks.com</a>.</p>
           <p>Only Abraham’s words are shown: audience questions are set apart, and “…” marks where someone else spoke. Answers are word-for-word transcript text. This is inspiration, not medical advice.</p>
         </div>
+      </div>
+      <div class="about-card about-contact">
+        <h2>Leave a comment</h2>
+        <p class="contact-line">Contact us: <a href="mailto:admin@abrahamanswers.com">admin@abrahamanswers.com</a></p>
+        <form id="commentForm" class="comment-form" novalidate>
+          <input class="honey" type="text" name="_honey" id="commentHoney" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <label for="commentName"><span>Name <span class="hint">(optional)</span></span>
+            <input type="text" id="commentName" name="name" autocomplete="name">
+          </label>
+          <label for="commentEmail"><span>Email <span class="hint">(optional, for a reply)</span></span>
+            <input type="email" id="commentEmail" name="email" autocomplete="email" inputmode="email">
+          </label>
+          <label for="commentMessage"><span>Message</span>
+            <textarea id="commentMessage" name="message" required rows="5"></textarea>
+          </label>
+          <div class="form-actions">
+            <button type="submit" class="btn-solid" id="commentSubmit">Send message</button>
+          </div>
+          <p class="form-status" id="commentStatus" role="status" aria-live="polite"></p>
+        </form>
       </div>
       <div class="about-cta"><button type="button" class="btn-solid" data-nav="ask">Ask a question <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></button></div>
     </section>
@@ -448,10 +496,67 @@
   "use strict";
   // ---- lazy data loading (v11): the search data lives in separate gzip files that are fetched with progress ----
   const DATA_BASE = "data/";
+
+  const COMMENT_ENDPOINT = "https://formsubmit.co/ajax/admin@abrahamanswers.com";
+  const COMMENT_MAIL = "admin@abrahamanswers.com";
+  function bindCommentForm() {
+    const form = document.getElementById("commentForm");
+    if (!form || form.dataset.bound) return;
+    form.dataset.bound = "1";
+    const status = document.getElementById("commentStatus");
+    const submit = document.getElementById("commentSubmit");
+    const setStatus = (msg, kind) => {
+      if (!status) return;
+      status.className = "form-status" + (kind ? " " + kind : "");
+      status.innerHTML = msg;
+    };
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const name = (document.getElementById("commentName") && document.getElementById("commentName").value || "").trim();
+      const email = (document.getElementById("commentEmail") && document.getElementById("commentEmail").value || "").trim();
+      const message = (document.getElementById("commentMessage") && document.getElementById("commentMessage").value || "").trim();
+      const honey = (document.getElementById("commentHoney") && document.getElementById("commentHoney").value || "").trim();
+      if (!message) {
+        setStatus("Please write a message.", "err");
+        const box = document.getElementById("commentMessage");
+        if (box) box.focus();
+        return;
+      }
+      if (honey) { setStatus("Thank you! Your message was sent.", "ok"); form.reset(); return; }
+      const bodyLines = (name ? "Name: " + name + "\n" : "") + (email ? "Email: " + email + "\n" : "") + "\n" + message;
+      const mailto = "mailto:" + COMMENT_MAIL + "?subject=" + encodeURIComponent("New comment from AbrahamAnswers.com") + "&body=" + encodeURIComponent(bodyLines);
+      setStatus("Sending…", "");
+      if (submit) { submit.disabled = true; submit.textContent = "Sending…"; }
+      try {
+        const res = await fetch(COMMENT_ENDPOINT, {
+          method: "POST",
+          headers: { "Content-Type": "application/json", "Accept": "application/json" },
+          body: JSON.stringify({
+            name: name,
+            email: email,
+            message: message,
+            _subject: "New comment from AbrahamAnswers.com",
+            _template: "table",
+            _honey: honey
+          })
+        });
+        const data = await res.json().catch(() => ({}));
+        if (!res.ok || data.success === "false" || data.success === false) throw new Error(data.message || "send failed");
+        setStatus("Thank you! Your message was sent.", "ok");
+        form.reset();
+      } catch (err) {
+        setStatus('Something went wrong. You can email us instead at <a href="' + mailto + '">' + COMMENT_MAIL + "</a>.", "err");
+      } finally {
+        if (submit) { submit.disabled = false; submit.textContent = "Send message"; }
+      }
+    });
+  }
+  bindCommentForm();
+
   const MODEL_ID = "Xenova/all-MiniLM-L6-v2";
   const RERANK_ID = "Xenova/ms-marco-MiniLM-L-6-v2";
   const MODEL_CDN = "https://cdn.jsdelivr.net/npm/@xenova/transformers@2.17.2";
-  const LOAD = { data: 0, model: 0, bestData: 0, bestModel: 0, label: "Getting Ask Abraham ready…" };
+  const LOAD = { data: 0, model: 0, bestData: 0, bestModel: 0, label: "Getting Abraham Answers ready…" };
   const PROG = {};
   function showBar(frac, label) {
     let el = document.getElementById("loadbar");
@@ -491,7 +596,7 @@
     const names = Object.keys(man.files), got = {};
     const total = names.reduce((a, k) => a + man.files[k].bytes, 0);
     const upd = (k, b) => { got[k] = b; LOAD.data = Math.min(1, Object.values(got).reduce((a, b2) => a + b2, 0) / total); updateLoad(); };
-    LOAD.label = "Getting Ask Abraham ready…"; updateLoad();
+    LOAD.label = "Getting Abraham Answers ready…"; updateLoad();
     const bytes = {};
     await Promise.all(names.map(async (k) => { bytes[k] = await fetchGz(DATA_BASE + man.files[k].url + "?v=" + man.v, (b) => upd(k, b)); upd(k, man.files[k].bytes); }));
     const dec = new TextDecoder();
@@ -514,7 +619,7 @@
       const tok = await mod.AutoTokenizer.from_pretrained(RERANK_ID, { progress_callback: onP });
       const model = await mod.AutoModelForSequenceClassification.from_pretrained(RERANK_ID, { quantized: true, progress_callback: onP });
       reranker = { tok, model };
-    } catch (err) { console.warn("Ask Abraham: reranker failed; using meaning-search order.", err); }
+    } catch (err) { console.warn("Abraham Answers: reranker failed; using meaning-search order.", err); }
     return { mod, extractor, reranker };
   })();
   MODELS.catch(() => {});
@@ -526,7 +631,7 @@
   let DATA;
   try { DATA = await loadAllData(); }
   catch (err) {
-    console.error("Ask Abraham: could not load library data", err);
+    console.error("Abraham Answers: could not load library data", err);
     showBar(null);
     const st = document.getElementById("status");
     if (st) st.textContent = "Couldn’t load Abraham’s library. Check your connection and refresh the page.";
@@ -769,7 +874,7 @@
       if (m.reranker) { reranker = m.reranker; rerankStatus = "ready"; } else rerankStatus = "failed";
       LOAD.model = 1; updateLoad();
     } catch (err) {
-      console.warn("Ask Abraham: semantic model failed, using keyword search.", err);
+      console.warn("Abraham Answers: semantic model failed, using keyword search.", err);
       embedStatus = "failed"; rerankStatus = "failed"; showBar(null);
       setModelNote("No connection to load the AI model, so keyword search is being used. You can still ask.");
     }
@@ -1120,7 +1225,7 @@
   const topicsPane = document.getElementById("topicsPane");
   if (topicsPane) { topicsPane.addEventListener("keydown", onResultsKey); topicsPane.addEventListener("click", onResultsClick); }
   const footer = document.getElementById("footerNote");
-  if (footer) footer.innerHTML = "Ask Abraham is a fan-made, unofficial resource. All teachings and videos belong to Abraham Hicks / Esther Hicks. <a href=\"?about=1\" data-nav=\"about\">About</a>";
+  if (footer) footer.innerHTML = "Abraham Answers is a fan-made, unofficial resource. All teachings and videos belong to Abraham Hicks / Esther Hicks. <a href=\"?about=1\" data-nav=\"about\">About</a>";
 
   let runId = 0;
   async function run(raw, opts) {
@@ -1637,11 +1742,11 @@
     return u.pathname + u.search + u.hash;
   }
   function setDocTitle(st) {
-    if (st.tab === "topics" && st.topic != null && TOPICS[st.topic]) document.title = TOPICS[st.topic].name + " · Ask Abraham";
-    else if (st.q) document.title = st.q + " · Ask Abraham";
-    else if (st.tab === "topics") document.title = "Explore · Ask Abraham";
-    else if (st.tab === "about") document.title = "About · Ask Abraham";
-    else document.title = "Ask Abraham";
+    if (st.tab === "topics" && st.topic != null && TOPICS[st.topic]) document.title = TOPICS[st.topic].name + " · Abraham Answers";
+    else if (st.q) document.title = st.q + " · Abraham Answers";
+    else if (st.tab === "topics") document.title = "Explore · Abraham Answers";
+    else if (st.tab === "about") document.title = "About · Abraham Answers";
+    else document.title = "Abraham Answers";
   }
   let navLock = false;
   function pushNav(replace) {
@@ -1696,7 +1801,7 @@
   async function shareCurrent() {
     pushNav(true);
     const url = location.href;
-    const title = document.title || "Ask Abraham";
+    const title = document.title || "Abraham Answers";
     try {
       if (navigator.share) { await navigator.share({ title, text: title, url }); return; }
     } catch (e) { if (e && e.name === "AbortError") return; }
